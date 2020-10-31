@@ -23,6 +23,7 @@ services:
     command: bash start.sh
     ports:
       - '3000:3000'
+      - '5000:5000'
     env_file:
       - '.env'
     volumes:
@@ -52,6 +53,12 @@ services:
     volumes:
       - /box
 
+  mailcatcher:
+    image: tophfr/mailcatcher
+    ports:
+      - 1025:25
+      - 1080:80
+  
 volumes:
   db:
   redis:

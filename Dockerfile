@@ -9,6 +9,9 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.lis
 RUN apt-get update && apt-get install -qq -y --no-install-recommends \
 nodejs yarn build-essential libpq-dev imagemagick git-all vim
 
+# Instala foreman
+RUN gem install foreman
+
 # Seta nosso path
 ENV INSTALL_PATH /app
 
