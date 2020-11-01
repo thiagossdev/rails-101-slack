@@ -1,29 +1,61 @@
-<h2>Sign up</h2>
+<div class="login-bg">
+  <div class="container">
+    <div id="login-page" class="row">
+      <div class="col s12 m7 l5 z-depth-4 card-panel border-radius-6 login-card bg-opacity-8">
+        <h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <div class="row">
+            <div class="field input-field col s12">
+              <i class="material-icons prefix pt-2">person_outline</i>
+              <%= f.email_field :name, autofocus: true %>
+              <%= f.label :name %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field input-field col s12">
+              <i class="material-icons prefix pt-2">person_outline</i>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+              <%= f.label :email %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field input-field col s12">
+              <i class="material-icons prefix pt-2">lock_outline</i>
+              <%= f.password_field :password, autocomplete: "new-password" %>
+              <%= f.label :password %>
+              <% if @minimum_password_length %>
+                <em class="ml-7">(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field input-field col s12">
+              <i class="material-icons prefix pt-2">lock_outline</i>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+              <%= f.label :password_confirmation %>
+            </div>
+          </div>
+
+          <div class="actions">
+            <div class="row">
+              <div class="field input-field col s12">
+                <%= f.button raw('Sign up <i class="material-icons right">send</i>'),
+                    name: "commit",
+                    type: "submit",
+                    class: "btn waves-effect waves-light col s12" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

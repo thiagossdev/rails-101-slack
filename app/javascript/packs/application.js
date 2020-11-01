@@ -21,3 +21,5 @@ import 'materialize-css/dist/js/materialize'
 
 // Stylesheets
 import '../stylesheets/application'
+
+console.log('Hello world')

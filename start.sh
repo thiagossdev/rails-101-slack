@@ -2,4 +2,4 @@
 bundle check || bundle install
 
 # Roda nosso servidor
-foreman start -f Procfile.dev
+bundle exec puma -C config/puma.rb

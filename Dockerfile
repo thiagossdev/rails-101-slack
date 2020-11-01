@@ -10,7 +10,8 @@ RUN apt-get update && apt-get install -qq -y --no-install-recommends \
 nodejs yarn build-essential libpq-dev imagemagick git-all vim
 
 # Instala foreman
-RUN gem install foreman
+#RUN gem install foreman
+RUN gem install dotenv
 
 # Seta nosso path
 ENV INSTALL_PATH /app
