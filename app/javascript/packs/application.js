@@ -19,7 +19,17 @@ require("channels")
 require("jquery")
 import 'materialize-css/dist/js/materialize'
 
+// Shareds
+import '../shared/navbar'
+import '../shared/messages'
+import '../shared/modal'
+import '../shared/datepicker'
+
+// .
+import './channels'
+import './talks'
+import './team_users'
+import './teams'
+
 // Stylesheets
 import '../stylesheets/application'
-
-console.log('Hello world')

@@ -1,3 +1,9 @@
 @import 'materialize-css/dist/css/materialize';
-@import 'styles';
+
+@import 'shared/_navbar';
+@import 'shared/_sidebar';
+@import 'teams/_sidebar';
+@import 'teams/index';
+@import 'teams/show';
 @import 'login';
+@import 'custom';
