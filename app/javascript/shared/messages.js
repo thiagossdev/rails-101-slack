@@ -4,10 +4,9 @@ function set_chat(name) {
 
 function clean_messages() {
   $('.messages').html('');
- $('.chat_name').html('');
+  $('.chat_name').html('');
 }
-
-function add_message(message, message_date, name) {
+window.add_message = (message, message_date, name) => {
   $('.messages').append(`<div class="message col s12">
     <div class="col m2 l1">
       <i class="material-icons prefix right profile_icon">account_circle</i>
@@ -19,6 +18,8 @@ function add_message(message, message_date, name) {
       <div class="row">${message}</div>
     </div>
   </div>`);
+
+  $('.messages').animate({ scrollTop: $('.messages').prop('scrollHeight')}, 100);
 }
 
 window.open = (id, type) => {
@@ -35,9 +36,11 @@ window.open = (id, type) => {
           set_chat(data['slug']);
         }
 
+        window.change_chat(id, type, $('.team_id').val());
+
         if(data['messages']) {
           Array.from(data['messages']).map((message) => {
-            add_message(message['body'], message['date'], message['user']['name']);
+            window.add_message(message['body'], message['date'], message['user']['name']);
           });
         }
       },

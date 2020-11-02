@@ -1,2 +1,2 @@
 # Roda os jobs
-dotenv bundle exec sidekiq -q emails
+dotenv bundle exec sidekiq -q default

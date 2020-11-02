@@ -16,8 +16,13 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
+
 require("jquery")
 import 'materialize-css/dist/js/materialize'
+
+window.App = {
+
+};
 
 // Shareds
 import '../shared/navbar'
