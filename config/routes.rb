@@ -1,7 +1,9 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-  mount Sidekiq::Web => '/sidekiq'
+  if Rails.env.development? then
+    mount Sidekiq::Web => '/sidekiq'
+  end
 
   root to: 'teams#index'
   resources :teams, only: [:create, :destroy]
